@@ -4,10 +4,10 @@ let bodyPraser = require('body-parser');
 app.use(bodyPraser.json());
 app.get('/', (req,res) =>{
     res.send("Calculator Started ");
-}).listen(3000, () => console.log('App is running on port 3000'));
+}).listen(80, () => console.log('App is running on port '));
 app.post('/add', (req,res) => {
-    const {n1 , n2}=req.body;
-    let ans = n1+n2;
+    const data =req.body;
+    let ans = data.n1+data.n2;
     res.json({ans});
 })
 app.post('/sub', (req,res) => {
